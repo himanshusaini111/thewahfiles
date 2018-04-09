@@ -14,6 +14,8 @@
 //Firebase Variables
 #define FIREBASE_HOST "the-wah.firebaseio.com"
 #define FIREBASE_AUTH "q9lchUSmqsCKVzfpT19eRZmbC0UtUZIha5cFhHSO"
+//#define FIREBASE_HOST "the-wah1.firebaseio.com"
+//#define FIREBASE_AUTH "qRmQP97rP51t3xU6qrBhTLF1SaA9Q9ReFBhxmF74"
 #define DB_PATH "Assistants/a45vuSucZIaD6BSx49J7HEJJbu12/Doctors/-L6f2Oi2eHAls0g6JwGl/Tokens/"
 #define bookedTokensPath "Assistants/a45vuSucZIaD6BSx49J7HEJJbu12/Doctors/-L6f2Oi2eHAls0g6JwGl/bookedTokens"
 
@@ -129,6 +131,7 @@ void loop() {
           }        
       }
       else{
+        Serial.println("fail");
         mfrc522.PICC_HaltA();
         mfrc522.PCD_StopCrypto1();
         return;
