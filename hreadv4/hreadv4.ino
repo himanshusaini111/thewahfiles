@@ -109,21 +109,24 @@ void loop() {
   tokenString = tokenChar;
   tokenNumber = tokenString.toInt();
 
-//wasting memory
-  int *bookedTokensInt = 0;
-  int n = 0;
+  bool nextTokenIsBooked = false;
+  int nextToken = tokenNumber;
 
 //get the bookedTokens Array
       FirebaseObject bookedFirebaseObject = Firebase.get(bookedTokensPath);
       if(Firebase.success()){
         JsonArray& bookedTokens = (bookedFirebaseObject.getJsonVariant()).as<JsonArray>();
-        bookedTokens.printTo(Serial);
-        n = bookedTokens.size();
-        int i = 0;
-        for(auto value : bookedTokens){
-           bookedTokensInt[i] = value.as<int>();
-           Serial.println(bookedTokensInt[i]);
-        }
+
+// get next Token
+          while(!nextTokenIsBooked && nextToken <= 100){
+            nextToken++;
+            for(auto value : bookedTokens){
+              if(value.as<int>() == nextToken){
+                nextTokenIsBooked = true;
+                break;
+              }
+            }
+          }        
       }
       else{
         mfrc522.PICC_HaltA();
@@ -132,28 +135,28 @@ void loop() {
       }
 
 //get next token
-  bool nextTokenIsBooked = false;
-  int nextToken = tokenNumber;
-  while(!nextTokenIsBooked && nextToken <= 100){
-    nextToken++;
-    for(int i = 0; i < n; i++){
-      if(bookedTokensInt[i] == nextToken){
-        nextTokenIsBooked = true;
-        break;
-      }
-    }
-  }
+
  
 //LCD variables UPDATE
   LCD_line1 = LCD_line1 + String(tokenNumber);
+  if(nextTokenIsBooked){
   LCD_line2 = LCD_line2 + String(nextToken);
-
 //LCD print
-  lcd.clear();
-  lcd.setCursor(2,0);
-  lcd.print(LCD_line1);
-  lcd.setCursor(4,1);
-  lcd.print(LCD_line2); 
+    lcd.clear();
+    lcd.setCursor(2,0);
+    lcd.print(LCD_line1);
+    lcd.setCursor(4,1);
+    lcd.print(LCD_line2);   
+  }
+  else{
+  LCD_line2 = "No more Tokens";
+//LCD print
+    lcd.clear();
+    lcd.setCursor(2,0);
+    lcd.print(LCD_line1);
+    lcd.setCursor(1,1);
+    lcd.print(LCD_line2);  
+  } 
   
 //update to Firebase---------------------------------------------
   String dbPath;
