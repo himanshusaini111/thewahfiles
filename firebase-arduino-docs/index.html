@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>firebase-arduino 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="None" href="index.html#document-index"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://firebase-arduino.readthedocs.io/en/latest/" />
+
+<link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="text/javascript" src="_static/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'index'
+</script>
+
+<script type="text/javascript" src="_static/readthedocs-dynamic-include.js"></script>
+
+<!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html#document-index" class="icon icon-home"> firebase-arduino
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html#document-index">firebase-arduino</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html#document-index">Docs</a> &raquo;</li>
+        
+      <li>firebase-arduino 1.0 documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/googlesamples/firebase-arduino/blob/master/docs/read_the_docs/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<p>FirebaseArduino is a library to simplify connecting to the Firebase database from
+arduino clients.</p>
+<p>It is a full abstraction of Firebase&#8217;s REST API exposed through C++ calls in a wiring
+friendly way. All Json parsing is handled by the library and you may deal in pure C/Arduino
+types.</p>
+<div class="section" id="class-documentation">
+<h1>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv215FirebaseArduino">
+<span id="FirebaseArduino"></span><span class="target" id="class_firebase_arduino"></span><em class="property">class </em><code class="descclassname"></code><code class="descname">FirebaseArduino</code><a class="headerlink" href="#_CPPv215FirebaseArduino" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Main class for Arduino clients to interact with Firebase. </p>
+<p>This implementation is designed to follow Arduino best practices and favor simplicity over all else. For more complicated usecases and more control see the Firebase class in Firebase.h. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino5beginERK6StringRK6String">
+<span id="FirebaseArduino::begin__StringCR.StringCR"></span><span class="target" id="class_firebase_arduino_1acdb1188fa77c4f503437a17da7268dac"></span>void <code class="descname">begin</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>host</em>, <em class="property">const</em> String &amp;<em>auth</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino5beginERK6StringRK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Must be called first. </p>
+<p>This initialize the client with the given firebase host and credentials. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">host</span></code>: Your firebase db host, usually X.firebaseio.com. </li>
+<li><code class="docutils literal"><span class="pre">auth</span></code>: Optional credentials for the db, a secret or token. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino7pushIntERK6Stringi">
+<span id="FirebaseArduino::pushInt__StringCR.i"></span><span class="target" id="class_firebase_arduino_1aab56b1e4930d39582c300056cada8843"></span>String <code class="descname">pushInt</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino7pushIntERK6Stringi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Appends the integer value to the node at path. </p>
+<p>Equivalent to the REST API&#8217;s POST. You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique key of the new child node. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path of the parent node. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Integer value that you wish to append to the node. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino9pushFloatERK6Stringf">
+<span id="FirebaseArduino::pushFloat__StringCR.float"></span><span class="target" id="class_firebase_arduino_1a81c643921ae7305cf3dbf331a8889fe9"></span>String <code class="descname">pushFloat</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino9pushFloatERK6Stringf" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Appends the float value to the node at path. </p>
+<p>Equivalent to the REST API&#8217;s POST. You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique key of the new child node. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path of the parent node. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Float value that you wish to append to the node. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino8pushBoolERK6Stringb">
+<span id="FirebaseArduino::pushBool__StringCR.b"></span><span class="target" id="class_firebase_arduino_1a9c41e523e2cf5565ac83b63d520fec4c"></span>String <code class="descname">pushBool</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino8pushBoolERK6Stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Appends the bool value to the node at path. </p>
+<p>Equivalent to the REST API&#8217;s POST. You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique key of the new child node. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path of the parent node. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Bool value that you wish to append to the node. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino10pushStringERK6StringRK6String">
+<span id="FirebaseArduino::pushString__StringCR.StringCR"></span><span class="target" id="class_firebase_arduino_1a5140fe0ece955f002928c4fa611824a8"></span>String <code class="descname">pushString</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, <em class="property">const</em> String &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino10pushStringERK6StringRK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Appends the String value to the node at path. </p>
+<p>Equivalent to the REST API&#8217;s POST. You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique key of the new child node. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path of the parent node. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: String value that you wish to append to the node. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino4pushERK6StringRK11JsonVariant">
+<span id="FirebaseArduino::push__StringCR.JsonVariantCR"></span><span class="target" id="class_firebase_arduino_1a618bc1304a762785348b873398c87640"></span>String <code class="descname">push</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, <em class="property">const</em> JsonVariant &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino4pushERK6StringRK11JsonVariant" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Appends the JSON data to the node at path. </p>
+<p>Equivalent to the REST API&#8217;s POST. You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique key of the new child node. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path of the parent node. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: JSON data that you wish to append to the node. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino6setIntERK6Stringi">
+<span id="FirebaseArduino::setInt__StringCR.i"></span><span class="target" id="class_firebase_arduino_1a2f822e3183e10981e719ce9f55e5e3a3"></span>void <code class="descname">setInt</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino6setIntERK6Stringi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the integer value to the node located at path equivalent to the REST API&#8217;s PUT. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path inside of your db to the node you wish to update. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Integer value that you wish to write. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino8setFloatERK6Stringf">
+<span id="FirebaseArduino::setFloat__StringCR.float"></span><span class="target" id="class_firebase_arduino_1a81d4820066be392f80403d5d739f6ce3"></span>void <code class="descname">setFloat</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino8setFloatERK6Stringf" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the float value to the node located at path equivalent to the REST API&#8217;s PUT. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path inside of your db to the node you wish to update. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Float value that you wish to write. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino7setBoolERK6Stringb">
+<span id="FirebaseArduino::setBool__StringCR.b"></span><span class="target" id="class_firebase_arduino_1a3bceeb5593cf84b9fb8f1426c88b4e71"></span>void <code class="descname">setBool</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino7setBoolERK6Stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the bool value to the node located at path equivalent to the REST API&#8217;s PUT. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path inside of your db to the node you wish to update. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: Bool value that you wish to write. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino9setStringERK6StringRK6String">
+<span id="FirebaseArduino::setString__StringCR.StringCR"></span><span class="target" id="class_firebase_arduino_1a92b55db32d6a10e3ba56cc423636eb76"></span>void <code class="descname">setString</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, <em class="property">const</em> String &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino9setStringERK6StringRK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the String value to the node located at path equivalent to the REST API&#8217;s PUT. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path inside of your db to the node you wish to update. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: String value that you wish to write. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino3setERK6StringRK11JsonVariant">
+<span id="FirebaseArduino::set__StringCR.JsonVariantCR"></span><span class="target" id="class_firebase_arduino_1a129dffc4a13dcf066580bed66f3785e0"></span>void <code class="descname">set</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em>, <em class="property">const</em> JsonVariant &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino3setERK6StringRK11JsonVariant" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the JSON data to the node located at path. </p>
+<p>Equivalent to the REST API&#8217;s PUT. You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path inside of your db to the node you wish to update. </li>
+<li><code class="docutils literal"><span class="pre">value</span></code>: JSON data that you wish to write. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino6getIntERK6String">
+<span id="FirebaseArduino::getInt__StringCR"></span><span class="target" id="class_firebase_arduino_1aa89175948f05824c82baf3b9a38a0fcc"></span>int <code class="descname">getInt</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino6getIntERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the integer value located at path. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The integer value located at that path. Will only be populated if <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> is true. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path to the node you wish to retrieve. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino8getFloatERK6String">
+<span id="FirebaseArduino::getFloat__StringCR"></span><span class="target" id="class_firebase_arduino_1a7f3a5ea348d08f47125cc3fab10960bd"></span>float <code class="descname">getFloat</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino8getFloatERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the float value located at path. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The float value located at that path. Will only be populated if <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> is true. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path to the node you wish to retrieve. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino9getStringERK6String">
+<span id="FirebaseArduino::getString__StringCR"></span><span class="target" id="class_firebase_arduino_1ab59f79a7521c2c975a913ab62e087dc8"></span>String <code class="descname">getString</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino9getStringERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the string value located at path. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The string value located at that path. Will only be populated if <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> is true. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path to the node you wish to retrieve. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino7getBoolERK6String">
+<span id="FirebaseArduino::getBool__StringCR"></span><span class="target" id="class_firebase_arduino_1a835759635d62004f002941a8d6a479b1"></span>bool <code class="descname">getBool</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino7getBoolERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the boolean value located at path. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The boolean value located at that path. Will only be populated if <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> is true. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path to the node you wish to retrieve. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino3getERK6String">
+<span id="FirebaseArduino::get__StringCR"></span><span class="target" id="class_firebase_arduino_1a39d824e7c91cefc9b78387b4ef8c03fd"></span><a class="reference internal" href="#_CPPv214FirebaseObject" title="FirebaseObject">FirebaseObject</a> <code class="descname">get</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino3getERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the json object value located at path. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a <a class="reference internal" href="#class_firebase_object"><span class="std std-ref">FirebaseObject</span></a> value located at that path. Will only be populated if <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> is true. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path to the node you wish to retrieve. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino6removeERK6String">
+<span id="FirebaseArduino::remove__StringCR"></span><span class="target" id="class_firebase_arduino_1aa7ebf019e68950dcc146f2db06a80fd4"></span>void <code class="descname">remove</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino6removeERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove the node, and possibly entire tree, located at path. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path to the node you wish to remove, including all of its children. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino6streamERK6String">
+<span id="FirebaseArduino::stream__StringCR"></span><span class="target" id="class_firebase_arduino_1a92aebbc43a21efa56738223008abc9e5"></span>void <code class="descname">stream</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino6streamERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Starts streaming any changes made to the node located at path, including any of its children. </p>
+<p>You should check <a class="reference internal" href="#class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"><span class="std std-ref">success()</span></a> after calling. This changes the state of this object. Once this is called you may start monitoring <a class="reference internal" href="#class_firebase_arduino_1a4aef3ff0b94d03eff0fcb72e6dcbccb2"><span class="std std-ref">available()</span></a> and calling <a class="reference internal" href="#class_firebase_arduino_1abc9af16268a57c49ac0ee2c7a01d18c9"><span class="std std-ref">readEvent()</span></a> to get new events. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">path</span></code>: The path inside of your db to the node you wish to monitor. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino9availableEv">
+<span id="FirebaseArduino::available"></span><span class="target" id="class_firebase_arduino_1a4aef3ff0b94d03eff0fcb72e6dcbccb2"></span>bool <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if there are new events available. </p>
+<p>This is only meaningful once <a class="reference internal" href="#class_firebase_arduino_1a92aebbc43a21efa56738223008abc9e5"><span class="std std-ref">stream()</span></a> has been called. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>If a new event is ready. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino9readEventEv">
+<span id="FirebaseArduino::readEvent"></span><span class="target" id="class_firebase_arduino_1abc9af16268a57c49ac0ee2c7a01d18c9"></span><a class="reference internal" href="#_CPPv214FirebaseObject" title="FirebaseObject">FirebaseObject</a> <code class="descname">readEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino9readEventEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the next event in a stream. </p>
+<p>This is only meaningful once <a class="reference internal" href="#class_firebase_arduino_1a92aebbc43a21efa56738223008abc9e5"><span class="std std-ref">stream()</span></a> has been called. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="#class_firebase_object"><span class="std std-ref">FirebaseObject</span></a> will have [&#8220;type&#8221;] that describes the event type, [&#8220;path&#8221;] that describes the effected path and [&#8220;data&#8221;] that was updated. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino7successEv">
+<span id="FirebaseArduino::success"></span><span class="target" id="class_firebase_arduino_1a2ffac88673914b1127500fcaf4ad9187"></span>bool <code class="descname">success</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino7successEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether the last command was successful. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino6failedEv">
+<span id="FirebaseArduino::failed"></span><span class="target" id="class_firebase_arduino_1a26b9eb1ae48bff085e5e33f4bae97fd8"></span>bool <code class="descname">failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino6failedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether the last command failed. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N15FirebaseArduino5errorEv">
+<span id="FirebaseArduino::error"></span><span class="target" id="class_firebase_arduino_1aac033626993a3cc5c2dd6f9c44336719"></span><em class="property">const</em> String &amp;<code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N15FirebaseArduino5errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Error message from last command if <a class="reference internal" href="#class_firebase_arduino_1a26b9eb1ae48bff085e5e33f4bae97fd8"><span class="std std-ref">failed()</span></a> is true. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv214FirebaseObject">
+<span id="FirebaseObject"></span><span class="target" id="class_firebase_object"></span><em class="property">class </em><code class="descclassname"></code><code class="descname">FirebaseObject</code><a class="headerlink" href="#_CPPv214FirebaseObject" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents value stored in firebase, may be a singular value (leaf node) or a tree structure. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N14FirebaseObject14FirebaseObjectEPKc">
+<span id="FirebaseObject::FirebaseObject__cCP"></span><span class="target" id="class_firebase_object_1ad7d2c81be4b883a2ef8a27d159c8f463"></span><code class="descname">FirebaseObject</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14FirebaseObject14FirebaseObjectEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct from json. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">data</span></code>: JSON formatted string. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject7getBoolERK6String">
+<span id="FirebaseObject::getBool__StringCRC"></span><span class="target" id="class_firebase_object_1af821a4a12cc8b145718beb5b9e46485f"></span>bool <code class="descname">getBool</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em> = &quot;&quot;<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject7getBoolERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the value as a boolean. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>result as a bool. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">optional</span></code>: path in the JSON object. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject6getIntERK6String">
+<span id="FirebaseObject::getInt__StringCRC"></span><span class="target" id="class_firebase_object_1a2505e4c339e1352aa23259d805db07b8"></span>int <code class="descname">getInt</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em> = &quot;&quot;<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject6getIntERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the value as an int. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>result as an integer. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">optional</span></code>: path in the JSON object. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject8getFloatERK6String">
+<span id="FirebaseObject::getFloat__StringCRC"></span><span class="target" id="class_firebase_object_1a059dd326f87420dea68e4cc874190fe0"></span>float <code class="descname">getFloat</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em> = &quot;&quot;<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject8getFloatERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the value as a float. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>result as a float. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">optional</span></code>: path in the JSON object. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject9getStringERK6String">
+<span id="FirebaseObject::getString__StringCRC"></span><span class="target" id="class_firebase_object_1aa801bbffbd33249ef422b53e464613c3"></span>String <code class="descname">getString</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em> = &quot;&quot;<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject9getStringERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the value as a String. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>result as a String. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">optional</span></code>: path in the JSON object. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject14getJsonVariantERK6String">
+<span id="FirebaseObject::getJsonVariant__StringCRC"></span><span class="target" id="class_firebase_object_1a145fbd3f5c6f9f37bf9306842bf2293c"></span>JsonVariant <code class="descname">getJsonVariant</code><span class="sig-paren">(</span><em class="property">const</em> String &amp;<em>path</em> = &quot;&quot;<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject14getJsonVariantERK6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the value as a JsonVariant. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>result as a JsonVariant. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">optional</span></code>: path in the JSON object. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject7successEv">
+<span id="FirebaseObject::successC"></span><span class="target" id="class_firebase_object_1a491e070f124634a2e3b5d0a9df28d67d"></span>bool <code class="descname">success</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject7successEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether there was an error decoding or accessing the JSON object. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject6failedEv">
+<span id="FirebaseObject::failedC"></span><span class="target" id="class_firebase_object_1a81b0d763394308c111bbf5e6d1d41773"></span>bool <code class="descname">failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject6failedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether there was an error decoding or accessing the JSON object. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK14FirebaseObject5errorEv">
+<span id="FirebaseObject::errorC"></span><span class="target" id="class_firebase_object_1ae50a652a09120480de6752924cc8403e"></span><em class="property">const</em> String &amp;<code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK14FirebaseObject5errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Error message if <a class="reference internal" href="#class_firebase_object_1a81b0d763394308c111bbf5e6d1d41773"><span class="std std-ref">failed()</span></a> is true. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, firebase-arduino.
+      
+        <span class="commit">
+          Revision <code>f022066e</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="/en/latest/">latest</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="//readthedocs.org/projects/firebase-arduino/downloads/pdf/latest/">pdf</a></dd>
+        
+          <dd><a href="//readthedocs.org/projects/firebase-arduino/downloads/htmlzip/latest/">htmlzip</a></dd>
+        
+          <dd><a href="//readthedocs.org/projects/firebase-arduino/downloads/epub/latest/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="//readthedocs.org/projects/firebase-arduino/?fromdocs=firebase-arduino">Project Home</a>
+          </dd>
+          <dd>
+            <a href="//readthedocs.org/builds/firebase-arduino/?fromdocs=firebase-arduino">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
