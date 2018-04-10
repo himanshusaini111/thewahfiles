@@ -17,6 +17,7 @@
 #define FIREBASE_HOST "thewah-e768a.firebaseio.com"
 #define FIREBASE_AUTH "qRmQP97rP51t3xU6qrBhTLF1SaA9Q9ReFBhxmF74"
 #define DB_PATH "Assistants/a45vuSucZIaD6BSx49J7HEJJbu12/Doctors/-L6f2Oi2eHAls0g6JwGl/Tokens/"
+#define Dr_STATE "Assistants/a45vuSucZIaD6BSx49J7HEJJbu12/Doctors/-L6f2Oi2eHAls0g6JwGl/state"
 #define bookedTokensPath "Assistants/a45vuSucZIaD6BSx49J7HEJJbu12/Doctors/-L6f2Oi2eHAls0g6JwGl/bookedTokens"
 
 //Wifi Variables
@@ -54,6 +55,12 @@ void setup() {
   delay(500);
   }
 
+//make Dr. Available
+  while(true){
+    Firebase.setString(Dr_STATE, "Available");
+    if(Firebase.success()) break;
+  }
+  
 //Starting Message
   lcd.clear();
   lcd.setCursor(2,0);
@@ -131,7 +138,9 @@ void loop() {
           }        
       }
       else{
-        Serial.println("fail");
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("RETAP Your Card");
         mfrc522.PICC_HaltA();
         mfrc522.PCD_StopCrypto1();
         return;
@@ -139,7 +148,7 @@ void loop() {
  
 //LCD variables UPDATE
   LCD_line1 = LCD_line1 + String(tokenNumber);
-  if(nextTokenIsBooked){
+  if(nextTokenIsBooked && nextToken<101){
   LCD_line2 = LCD_line2 + String(nextToken);
 //LCD print
     lcd.clear();
