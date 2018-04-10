@@ -31,6 +31,7 @@
 //required variables
 LiquidCrystal_I2C lcd(0x27,16,2);
 int currentToken = -1;
+String  LCD_line1 = "Dr. P. Kumar", LCD_line2 = "NEXT : 1";
 MFRC522 mfrc522(SS_PIN, RST_PIN); 
 
 //userdefined functions
@@ -70,10 +71,10 @@ void setup() {
 }
 
 void loop() {
-  
+  String  LCD_line1 = "CURRENT : ", LCD_line2 = "NEXT : ";
   int tokenNumber;
   char tokenChar[18];
-  String tokenString, LCD_line1 = "CURRENT : ", LCD_line2 = "NEXT : ";
+  String tokenString;
   
   MFRC522::MIFARE_Key key;
   for (byte i = 0; i < 6; i++) key.keyByte[i] = 0xFF;
@@ -118,7 +119,7 @@ void loop() {
   tokenString = tokenChar;
   tokenNumber = tokenString.toInt();
 
-  bool nextTokenIsBooked = false;
+  bool nextTokenIsBooked = false, tokenIsBooked = false;
   int nextToken = tokenNumber;
 
 //get the bookedTokens Array
@@ -126,6 +127,34 @@ void loop() {
       if(Firebase.success()){
         JsonArray& bookedTokens = (bookedFirebaseObject.getJsonVariant()).as<JsonArray>();
 
+//check if tokenIsBooked
+            for(auto value : bookedTokens){
+              if(value.as<int>() == tokenNumber){
+                tokenIsBooked = true;
+                break;
+              }
+            }
+
+  if(!tokenIsBooked){
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Token Not Booked");  
+        lcd.setCursor(2,1);
+        lcd.print("Return it!!");
+        
+        delay(2000);
+        
+        lcd.clear();
+        lcd.setCursor(2,0);
+        lcd.print(::LCD_line1);
+        lcd.setCursor(1,1);
+        lcd.print(::LCD_line2); 
+
+        mfrc522.PICC_HaltA();
+        mfrc522.PCD_StopCrypto1();
+        return;
+  }
+  
 // get next Token
           while(!nextTokenIsBooked && nextToken <= 100){
             nextToken++;
@@ -148,6 +177,7 @@ void loop() {
  
 //LCD variables UPDATE
   LCD_line1 = LCD_line1 + String(tokenNumber);
+  ::LCD_line1 = LCD_line1;
   if(nextTokenIsBooked && nextToken<101){
   LCD_line2 = LCD_line2 + String(nextToken);
 //LCD print
@@ -166,6 +196,7 @@ void loop() {
     lcd.setCursor(1,1);
     lcd.print(LCD_line2);  
   } 
+  ::LCD_line2 = LCD_line2;
   
 //update to Firebase---------------------------------------------
   String dbPath;
